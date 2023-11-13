@@ -35,7 +35,11 @@ SOURCES = \
 	ft_putnbr_fd.c \
 	ft_split.c \
 
+BSOURCES = \
+	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJECTS = $(SOURCES:.c=.o)
+BOBJECTS = $(BSOURCES:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -44,6 +48,9 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	$(AR) -r $@ $?
+
+bonus: $(OBJECTS) $(BOBJECTS)
+	$(AR) -r $(NAME) $?
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $?

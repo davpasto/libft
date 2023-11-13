@@ -76,31 +76,6 @@ static char	**ft_fill_array(char **aux, char const *s, char c)
 	return (aux);
 }
 
-/*static char	**ft_fill_array(char **aux, char const *s, char c)
-{
-	size_t	i;
-	size_t	j;
-	int		k;
-
-	i = 0;
-	k = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		j = i;
-		while (s[i] && s[i] != c)
-			i++;
-		aux[k] = (char *)ft_calloc((i - j + 1), sizeof(char));
-		if (!aux[k])
-			break;
-		ft_strlcpy(aux[k++], s + j, i - j + 1);
-	}
-	if (aux[k - 1] == NULL)
-		ft_free_split(aux);
-	return (aux);
-}*/
-
 char	**ft_split(char const *s, char c)
 {
 	char	**aux;
